@@ -10,6 +10,8 @@
         <module>patientserver</module>
         <module>drugserver</module>
         <module>gateway</module>
+        <module>configserver</module>
+        <module>configclient</module>
     </modules>
     <parent>
         <groupId>org.springframework.boot</groupId>
