@@ -11,7 +11,13 @@ management:
     web:
       exposure:
         include: '*'
+# 将actuator 的refresh接口暴露出去
 
-
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://${eureka.host:127.0.0.1}:${eureka.port:8761}/eureka/
+  instance:
+    prefer-ip-address: true
 
 

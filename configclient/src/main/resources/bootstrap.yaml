@@ -1,15 +1,21 @@
 spring:
   cloud:
     config:
-      discovery:
-        enabled: true
-        service-id: config-center
+#      discovery:
+#        enabled: true
+#        service-id: config-center
       label: master
       profile: dev
       name: ins-config
-eureka:
-  client:
-    serviceUrl:
-      defaultZone: http://${eureka.host:127.0.0.1}:${eureka.port:8761}/eureka/
-  instance:
-    prefer-ip-address: true
+      uri: http://47.102.107.121:8001 #如果不用注册中心的话，需要指定配置中心的地址
+    bus:
+      trace:
+        enabled: true
+  rabbitmq:
+    host: 47.102.107.121
+    port: 5672
+    username: admin
+    password: 1234
+management:
+  security:
+    enabled: false
